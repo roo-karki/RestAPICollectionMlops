@@ -1,0 +1,383 @@
+{
+	"info": {
+		"_postman_id": "ba64baa0-68ec-4f55-8b53-70ffa23e352f",
+		"name": "RestAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27798221"
+	},
+	"item": [
+		{
+			"name": "Create Environment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"lastDayExperiment\",\r\n  \"artifact_location\": \"string\",\r\n  \"tags\": [\r\n    {\r\n      \"key\": \"KNN\",\r\n      \"value\": \"KNN Algo\"\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/2.0/mlflow/experiments/create",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"2.0",
+						"mlflow",
+						"experiments",
+						"create"
+					],
+					"query": [
+						{
+							"key": "experiment_id",
+							"value": "1234",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Experiment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"max_results\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/2.0/mlflow/experiments/search",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"2.0",
+						"mlflow",
+						"experiments",
+						"search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Experiment",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/2.0/mlflow/experiments/get?experiment_id=840936238324316688",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"2.0",
+						"mlflow",
+						"experiments",
+						"get"
+					],
+					"query": [
+						{
+							"key": "experiment_id",
+							"value": "840936238324316688"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a  Experiment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"experiment_id\": \"396248054414940095\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000//api/2.0/mlflow/experiments/delete",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"",
+						"api",
+						"2.0",
+						"mlflow",
+						"experiments",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Run Environment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"experiment_id\": 840936238324316688,\r\n  \"user_id\": \"string\",\r\n  \"start_time\": 0,\r\n  \"tags\": [\r\n    {\r\n      \"key\": \"KNN\",\r\n      \"value\": \"KNN Algo\"\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/2.0/mlflow/runs/create",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"2.0",
+						"mlflow",
+						"runs",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Restore Environment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"experiment_id\": \"396248054414940095\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000//api/2.0/mlflow/experiments/restore",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"",
+						"api",
+						"2.0",
+						"mlflow",
+						"experiments",
+						"restore"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a Run",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/2.0/mlflow/runs/get?run_id=515f19f755434be294749879db61940b",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"2.0",
+						"mlflow",
+						"runs",
+						"get"
+					],
+					"query": [
+						{
+							"key": "run_id",
+							"value": "515f19f755434be294749879db61940b"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Set a tag",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"run_id\": \"515f19f755434be294749879db61940b\",\r\n  \"key\": \"linear regression\",\r\n  \"value\": \"lr algo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/2.0/mlflow/runs/set-tag",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"2.0",
+						"mlflow",
+						"runs",
+						"set-tag"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a tag",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n\r\n{\r\n\"run_id\": \"515f19f755434be294749879db61940b\",\r\n\"key\": \"string\",\r\n\"value\": \"First string\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/2.0/mlflow/runs/delete-tag",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"2.0",
+						"mlflow",
+						"runs",
+						"delete-tag"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Run",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"experiment_id\": \"396248054414940095\",\r\n  \"user_id\": \"1\",\r\n  \"start_time\": 0,\r\n  \"tags\": [\r\n    {\r\n      \"key\": \"string\",\r\n      \"value\": \"string\"\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000//api/2.0/mlflow/runs/create",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"",
+						"api",
+						"2.0",
+						"mlflow",
+						"runs",
+						"create"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
